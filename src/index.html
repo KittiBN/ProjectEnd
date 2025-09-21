@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="ภาควิชาคอมพิวเตอร์โปรแกรมเมอร์ วิทยาลัยอาชีวศึกษาสุพรรณบุรี - ผลิตบุคลากรด้านเทคโนโลยีสารสนเทศที่มีคุณภาพ">
+  <meta name="keywords" content="คอมพิวเตอร์, โปรแกรมเมอร์, วิทยาลัยอาชีวศึกษา, สุพรรณบุรี, เทคโนโลยี">
+  <meta name="author" content="วิทยาลัยอาชีวศึกษาสุพรรณบุรี">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#3b82f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ComputerProgrammer">
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Microsoft Tiles -->
+  <meta name="msapplication-TileColor" content="#3b82f6">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  
+  <!-- Prevent zoom on form inputs in iOS -->
+  <meta name="format-detection" content="telephone=no">
+  
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'%3E%3Cpath d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E">
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'%3E%3Cpath d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E">
+  
+  <title>ComputerProgrammer - วิทยาลัยอาชีวศึกษาสุพรรณบุรี</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
